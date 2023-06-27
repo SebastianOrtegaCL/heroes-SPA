@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { MarvelPage } from './heroes/pages/MarvelPage';
-import { DcPage } from './heroes/pages/DcPage';
+import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
+
+import { DcPage, MarvelPage } from './heroes';
+
 import { LoginPage } from './auth/pages/LoginPage';
-import { HeroesApp } from './routes/HeroesApp';
 import { ErrorPage } from './ErrorPage';
+import { Root } from './routes/Root';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HeroesApp />,
+    element: <Root />,
     errorElement: <ErrorPage /> ,
     children: [
       {
