@@ -1,7 +1,23 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate, redirect } from 'react-router-dom';
 
 
 export const Navbar = () => {
+
+    // console.log(props)
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        // Opcion recomendada por la documentacion: si estamos esperando data utilizar
+        // redirect !
+        // Esta es una opcion antigua
+        navigate('/login', {
+            replace: true,
+        });
+
+    }
+
+    
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
             
@@ -53,6 +69,7 @@ export const Navbar = () => {
                     </span> 
                     <button 
                         className='nav-item nav-link btn'
+                        onClick={ handleLogout }
                     >
                         Logout
                     </button>
