@@ -35,6 +35,14 @@ export const Navbar = () => {
                     >
                         DC
                     </NavLink>
+                    <NavLink
+                        to='/search'
+                        className={ ({ isActive, isPending }) => 
+                            isPending ? 'nav-item nav-link' : isActive ? 'nav-item nav-link active' : 'nav-item nav-link'
+                        }
+                    >
+                        Search
+                    </NavLink>
                 </div>
             </div>
 

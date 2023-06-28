@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './styles.css'
 import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
 
-import { DcPage, MarvelPage } from './heroes';
+import { DcPage, MarvelPage, Search, Hero } from './heroes';
 
 import { LoginPage } from './auth/pages/LoginPage';
 import { ErrorPage } from './ErrorPage';
@@ -24,12 +24,19 @@ const router = createBrowserRouter([
         element: <MarvelPage />
       },
       {
-        path: 'login',
-        element: <LoginPage />
+        path: 'search',
+        element: <Search />
+      },
+      {
+        path: 'hero',
+        element: <Hero />
       }
-      
     ]
 
+  },
+  {
+    path: 'login',
+    element: <LoginPage />
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
