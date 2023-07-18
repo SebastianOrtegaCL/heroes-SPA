@@ -8,6 +8,7 @@ import { DcPage, MarvelPage, Search, Hero } from './heroes';
 import { LoginPage } from './auth/pages/LoginPage';
 import { ErrorPage } from './ErrorPage';
 import { Root } from './routes/Root';
+import { AuthProvider } from './auth';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,9 @@ const router = createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router = {router}/>
+    <AuthProvider>
+     <RouterProvider router = {router}/>
+    </AuthProvider>
      {/* <HeroesApp /> */}
   </React.StrictMode>
 )

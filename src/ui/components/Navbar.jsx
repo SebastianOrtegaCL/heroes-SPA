@@ -1,10 +1,16 @@
+import { useContext } from 'react';
 import { Link, NavLink, useNavigate, redirect } from 'react-router-dom';
+import { AuthContext } from '../../auth';
 
 
 export const Navbar = () => {
 
-    // console.log(props)
     const navigate = useNavigate();
+
+    const { user } = useContext( AuthContext );
+
+    console.log(user)
+
 
     const handleLogout = () => {
         // Opcion recomendada por la documentacion: si estamos esperando data utilizar
@@ -65,7 +71,7 @@ export const Navbar = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                     <span className='nav-item nav-link text-primary'>
-                        Sebastian 
+                        {user.name}
                     </span> 
                     <button 
                         className='nav-item nav-link btn'
