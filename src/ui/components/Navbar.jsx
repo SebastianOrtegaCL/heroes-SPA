@@ -7,15 +7,16 @@ export const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const { user } = useContext( AuthContext );
+    const { user, logout } = useContext( AuthContext );
 
-    console.log(user)
+    // console.log(user)
 
 
     const handleLogout = () => {
         // Opcion recomendada por la documentacion: si estamos esperando data utilizar
         // redirect !
         // Esta es una opcion antigua
+        logout();
         navigate('/login', {
             replace: true,
         });
