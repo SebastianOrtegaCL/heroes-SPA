@@ -7,7 +7,7 @@ export const Root = () => {
         {/* <h1>Heroes APP 'entrada'</h1> */}
         <div id='detail'>
           <Navbar />
-          <Outlet /> 
+          <Outlet />
         </div>
       </>
     )
