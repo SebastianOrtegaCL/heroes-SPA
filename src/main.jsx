@@ -9,11 +9,15 @@ import { LoginPage } from './auth/pages/LoginPage';
 import { ErrorPage } from './ErrorPage';
 import { Root } from './routes/Root';
 import { AuthProvider } from './auth';
+import { PrivateRoute } from './routes/PrivateRoute';
+import { PublicRoute } from './routes/PublicRoute';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <PrivateRoute> 
+                <Root/>
+            </PrivateRoute>,
     errorElement: <ErrorPage /> ,
     children: [
       {
@@ -37,7 +41,10 @@ const router = createBrowserRouter([
   },
   {
     path: 'login',
-    element: <LoginPage />
+    element: 
+      <PublicRoute>
+        <LoginPage />
+      </PublicRoute>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
