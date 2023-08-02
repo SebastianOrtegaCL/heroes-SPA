@@ -12,14 +12,12 @@ export const Search = () => {
   
   const { q = '' } = queryString.parse(location.search);
 
-  // console.log(typeof q)
   
   const heroes = getHeroesByName(q);
-  console.log(heroes)
 
 
   const { searchText, onInputChange } = useForm({
-    searchText: 'q'
+    searchText: q,
 
 
   });
