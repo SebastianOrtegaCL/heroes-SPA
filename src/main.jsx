@@ -12,7 +12,7 @@ import { AuthProvider } from './auth';
 import { PrivateRoute } from './routes/PrivateRoute';
 import { PublicRoute } from './routes/PublicRoute';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <PrivateRoute> 
@@ -37,7 +37,6 @@ const router = createBrowserRouter([
         element: <Hero />
       }
     ]
-
   },
   {
     path: 'login',
